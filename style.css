@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Neue Montreal";
+  color: #2c2c2c;
+  background-color: #F8F8F8;
+}
+
+.container {
+  width: 84%;
+  max-width: 75.5rem;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Neue Montreal";
+  font-size: 5.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 106.025%; /* 5.69888rem */
+  letter-spacing: -0.1075rem;
+  margin: 0;
+}
+
+.btn-primary {
+  text-decoration: none;
+  color: #F8F8F8;
+  background-color: #E086D3;
+  padding: 0.4rem 1.1rem 0.4rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+.btn-primary svg {
+  margin-left: 1rem;
+}
+
+.hero {
+  height: 100vh;
+  height: 100dvh;
+  border: 1px solid green;
+}
+.hero .hero-txt {
+  margin: 0 auto;
+  text-align: center;
+  width: 75%;
+  padding-top: 2rem;
+}
+.hero .hero-txt h1 {
+  margin-bottom: 0.7rem;
+}
+.hero .hero-txt .highlight {
+  background-color: #36C896;
+  color: #F8F8F8;
+  padding: 0 1rem 0 1rem;
+}
+.hero .hero-graphic {
+  display: flex;
+  border: 1px solid red;
+}/*# sourceMappingURL=style.css.map */
