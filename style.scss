@@ -77,16 +77,16 @@ $purple: #462749;
 }
 
 body {
-    margin: 0;
-    font-family: 'Neue Montreal';
-    color: #2c2c2c;
-    background-color: $white;
+  margin: 0;
+  font-family: 'Neue Montreal';
+  color: #2c2c2c;
+  background-color: $white;
 }
 
 .container {
-    width: 84%;
-    max-width: 75.5rem;
-    margin: 0 auto;
+  width: 84%;
+  max-width: 75.5rem;
+  margin: 0 auto;
 }
 
 img {
@@ -94,38 +94,50 @@ img {
 }
 
 h1 {
-font-family: "Neue Montreal";
-font-size: 5.375rem;
-font-style: normal;
-font-weight: 700;
-line-height: 106.025%; /* 5.69888rem */
-letter-spacing: -0.1075rem;
-margin: 0;
+  font-family: "Neue Montreal";
+  font-size: clamp(2rem, min(9vh, 8vw), 5.375rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 106.025%;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
 .btn-primary {
-    text-decoration: none;
-    color: $white;
-    background-color: $pink;
-    padding: 0.4rem 1.1rem 0.4rem 1.1rem;
-    display: inline-flex;
-    align-items: center;
-    font-size: 1rem;
-    border-radius: 0.25rem;
+  text-decoration: none;
+  color: $white;
+  background-color: $pink;
+  padding: 0.4rem 1.1rem 0.4rem 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 0.25rem;
 
-    svg {
-      margin-left: 1rem;
-    }
+  svg {
+    margin-left: 1rem;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $purple;
+    outline-offset: 3px;
+  }
 }
-
 
 //Hero
 
 .hero {
   height: 100vh;
-  height: 100dvh;  
-  border: 1px solid green;
+  height: 100dvh;
+  overflow: hidden;
+
+  > .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .hero-txt {
+    flex: 0 0 auto;
     margin: 0 auto;
     text-align: center;
     width: 75%;
@@ -136,15 +148,50 @@ margin: 0;
     }
 
     .highlight {
-        background-color: $green;
-        color: $white;
-        padding: 0 1rem 0 1rem;
+      background-color: $green;
+      color: $white;
+      padding: 0 1rem 0 1rem;
     }
+  }
+
+  .hero-graphic {
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 1.5rem;
+    overflow: hidden;
+    //border: 1px solid red;
+
+    img {
+       height: calc(100% + 8.75rem); // same as the "from" translateY in @keyframes bob
+      width: auto;
+      min-width: 0;
+      flex: 0 1 auto;
+      object-fit: contain;
+      object-position: bottom;
+      animation: bob ease-in-out infinite alternate;
+    }
+
+    img + img {
+      margin-left: -8%; // overlap between images
+    }
+
+    .vote-hand { z-index: 1; animation-duration: 1.5s;  animation-delay: 0s; }
+    .megaphone { z-index: 2; animation-duration: 2s;    animation-delay: -0.6s; }
+    .voter     { z-index: 1; animation-duration: 1.75s; animation-delay: -1s; }
+  }
 }
 
-.hero-graphic {
-  display: flex;
-  border: 1px solid red;
+@keyframes bob {
+  from { transform: translateY(8.75rem); }
+  to   { transform: translateY(10rem); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-graphic img {
+    animation: none;
+    transform: translateY(2.25rem);
+  }
 }
